@@ -1,0 +1,46 @@
+CREATE TABLE drivers(
+id_driver integer,
+name varchar );
+
+CREATE TABLE taxi(
+id_taxi integer,
+id_driver integer,
+id_auto integer,
+fixed_rate integer );
+
+CREATE TABLE taxi_location(
+id_tl integer,
+id_taxi integer,
+taxi_location varchar );
+
+CREATE TABLE autos(
+id_auto integer,
+id_type integer,
+model  varchar, 
+seats integer );
+
+CREATE TABLE orders(
+id_order integer,
+id_taxi integer,
+id_client integer
+);
+
+CREATE TABLE client(
+id_client integer,
+name varchar,
+telephone_number integer,
+budget integer
+);
+
+CREATE TABLE client_location(
+id_cl integer,
+id_client integer,
+client_location varchar,
+client_destination varchar,
+price integer
+);
+
+CREATE TABLE vehicle_type(
+it_type integer,
+type varchar
+);
