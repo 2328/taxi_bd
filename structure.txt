@@ -41,6 +41,6 @@ price integer
 );
 
 CREATE TABLE vehicle_type(
-it_type integer,
+id_type integer,
 type varchar
 );

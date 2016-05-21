@@ -1,0 +1,17 @@
+ALTER TABLE vehicle_type ADD PRIMARY KEY (id_type);
+ALTER TABLE autos ADD PRIMARY KEY (id_auto);
+ALTER TABLE client ADD PRIMARY KEY (id_client);
+ALTER TABLE orders ADD PRIMARY KEY (id_order);
+ALTER TABLE client_location ADD PRIMARY KEY (id_cl);
+ALTER TABLE taxi ADD PRIMARY KEY (id_taxi);
+ALTER TABLE taxi_location ADD PRIMARY KEY (id_tl);
+ALTER TABLE drivers ADD PRIMARY KEY (id_driver);
+
+
+ALTER TABLE autos ADD CONSTRAINT cs_type FOREIGN KEY (id_type) REFERENCES vehicle_type(id_type);
+ALTER TABLE orders ADD CONSTRAINT cs_client_order FOREIGN KEY (id_client) REFERENCES client(id_client);
+ALTER TABLE orders ADD CONSTRAINT cs_taxi_order FOREIGN KEY (id_taxi) REFERENCES taxi(id_taxi);
+ALTER TABLE client_location ADD CONSTRAINT cs_client_location FOREIGN KEY (id_client) REFERENCES client(id_client);
+ALTER TABLE taxi_location ADD CONSTRAINT cs_taxi_location FOREIGN KEY (id_taxi) REFERENCES taxi(id_taxi);
+ALTER TABLE taxi ADD CONSTRAINT cs_driver FOREIGN KEY (id_driver) REFERENCES drivers(id_driver);
+ALTER TABLE taxi ADD CONSTRAINT cs_taxi_autos FOREIGN KEY (id_auto) REFERENCES autos(id_auto);
